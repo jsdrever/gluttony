@@ -15,6 +15,45 @@
 .lol {
     position: fixed;
     right: 15%;
-    top: -8px;
+    top: 77px;
     max-width: 10px;
+  }
+#highScores {
+    position: absolute;
+    top: 10%;
+    border: 5px solid black;
+}
+
+/* background video */
+  
+.video-container{
+    width: 100vw;
+    height: 100vh;
+  }
+  
+   iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  
+  @media (min-aspect-ratio: 16/9) {
+    .video-container iframe {
+      height: 56.25vw;
+    }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    .video-container iframe {
+      width: 177.78vh;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+        min-width: 400px;
+    }
   }
