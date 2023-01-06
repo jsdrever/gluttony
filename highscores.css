@@ -12,3 +12,9 @@
 .high-score:hover {
     transform: scale(1.025);
 }
+.lol {
+    position: fixed;
+    right: 15%;
+    top: -8px;
+    max-width: 10px;
+  }
