@@ -113,7 +113,7 @@ choices.forEach(choice => {
 
 });
 //! needs to be called by the start button/ and returns to 
-var secondsLeft = 3;
+var secondsLeft = 13;
 
 function setTime() {
   // Sets interval in variable
