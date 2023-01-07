@@ -3,7 +3,12 @@
     padding-left: 0;
     margin-bottom: 4rem;
 }
-
+.container {
+    position: absolute;
+    top: 10%; 
+    border: none;
+    height: 500px;
+}
 .high-score {
     font-size: 2.8rem;
     margin-bottom: 0.5rem;
@@ -15,9 +20,19 @@
 .lol {
     position: fixed;
     right: 15%;
-    top: 77px;
+    top: 20%;
     max-width: 10px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
+
 #highScores {
     position: absolute;
     top: 10%;

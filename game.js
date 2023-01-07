@@ -58,7 +58,7 @@ const MAX_QUESTIONS = 4;
         getNewQuestion();
     };
     getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+    if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem("mostRecentScore", score);
         return window.location.assign("/end.html");
     }
@@ -68,12 +68,12 @@ const MAX_QUESTIONS = 4;
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
-
+    //connect the choices to the question
     choices.forEach( choice => {
         const number = choice.dataset["number"];
         choice.innerText = currentQuestion["choice" + number];
     })
-
+    //take the array and remove the questions that have already been displayed
     availableQuestions.splice(questionIndex, 1);
 
     acceptingAnswers = true;
@@ -82,6 +82,8 @@ const MAX_QUESTIONS = 4;
     //     return window.location.assign("/end.html");
     // }
 };
+
+//todo click on the p choices
 
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
@@ -113,8 +115,8 @@ choices.forEach(choice => {
 
 });
 //! needs to be called by the start button/ and returns to 
-var secondsLeft = 13;
-
+var secondsLeft = 100;
+//todo i know theres a cleaner way to combine the timer and end of questions return window
 function setTime() {
   // Sets interval in variable
   var timerInterval = setInterval(function() {
